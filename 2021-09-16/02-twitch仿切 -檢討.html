@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        html{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+/* 頁首start */
+
+        header{
+            position: fixed;
+            /*因為header要固定位置*/
+            top: 0;
+            left: 0;
+            background-color:white;
+            border-bottom: 1px solid gray;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+        }
+
+        .logo{
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            margin-left: 15px;
+        }
+
+        nav {
+			margin-left: 70px;
+		}
+
+        .menu{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .menu-btn>a{
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            padding-right: 20px;
+            color: black;
+        }
+    
+        .search-bar{
+            display: flex;
+            align-items: center;
+        }
+
+        input{
+            font-size: 16px;
+            padding-left: 8px;
+        }
+        .search-input{
+            width: 340px;
+            height: 33px;
+            border-radius: 7px 0 0 7px;
+            background-color:lightgray;
+            border: 0;
+            margin-right: 1px;
+        }
+
+        .search-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 33px;
+            background-color:gray;
+            border-radius: 0 7px 7px 0;
+        }
+
+        .search-btn>a{
+            display: block;
+        }
+    
+        .member{
+           display: flex;
+        }
+    
+        .sign-in-sign-up{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style-type: none; 
+        }
+
+        .sign-in>a{
+            background-color: lightgray;
+            color: black;
+            margin-right: 10px;
+        }
+
+        .sign-up>a{
+            background-color: #8A44F4;
+            color: white;
+        }
+
+        .sign-in-sign-up>li>a{
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: bolder;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .prime-btn{
+            margin-right: 10px;
+        }
+
+        .core-btn{
+            margin:0 10px 0 10px;
+        }
+
+/* 頁首end */
+
+        aside{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: calc(100vh - 50px);
+            background-color: rgb(235, 228, 228);
+        }
+
+        .channel{
+            width: 30px;
+            height: 30px;
+            background-color: rgb(235, 161, 172);
+            border-radius: 15px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+/* 主要區塊start */
+
+        main{
+            margin: 50px 0 0 50px;
+            padding: 30px;
+        }
+
+
+        h1{
+            margin: 0;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .e-sport-description{
+            margin:10px 0 40px 0;
+            color: gray;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .e-sport>.row{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .e-sport>.row>.col{
+            min-width: 210px;
+        }
+
+        .game-card{
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            padding: 8px;
+            background-color: rgb(238, 238, 238);
+            font-size: 10px;
+        }
+
+        .game-img{
+            width: 40px;
+            height: 50px;
+            background-image: url(./img/league\ of\ legends.jpg);
+            background-size:cover;
+        }
+
+        .game-info{
+            margin:0 5px 0 5px ;
+        }
+
+        .game-name{
+            margin: 0;
+            font-weight: bold;
+        }
+        .sub-info{
+            margin: 0;
+        }
+
+        .live-block{
+            height: 50px;
+        }
+
+        .live{
+            display: inline;
+            padding: 2px 4px;
+            color: white;
+            background-color: red;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        h2{
+            font-weight: bold;
+            margin: 20px 0 0 0;
+        }
+
+        .pk-live-description{
+            margin: 0 0 15px 0;
+            color: gray;
+        }
+
+        .pk-live-block{
+            display: flex;
+        }
+
+        .pk-live-highlight{
+            width: 33.33%;
+        }
+
+        .pk-live-block>.row{
+            display: flex;
+            flex-wrap: wrap;
+            width: 66.66%;
+        }
+
+        .pk-live-block>.row>.col{
+            width: 25%;
+            padding: 0 12.5px;
+        }
+
+        .thumbnail{
+            min-width: 207px;
+        }
+
+        .pk-live-highlight .thumbnail{
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-image: url("./img/Reveal_Canopy_VALORANT.jpg");
+            background-size:cover;
+        }
+
+        .pk-live-highlight .live{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .pk-live-highlight .audience{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 14px;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+
+        .streamer{
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 17.5px;
+            font-weight: bold;
+            color: #8A44F4;
+        }
+
+        .pic{
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            background-image: url(./img/face2.jpg);
+            background-size: 96%;
+            background-position: center;
+            border-radius: 12.5px;
+        }
+
+        .stream-title{
+            font-weight: bold;
+            margin-bottom: 5px;
+            overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+        }
+
+        .pk-live-highlight .stream-title{
+            font-size: 22.5px;
+        }
+        
+        .pk-live-highlight .stream-game-languge{
+            font-size: 17.5px;
+            color: #adadb8;
+        }
+
+        .pk-live-group .stream-title{
+            font-size: 17.5px;
+        }
+
+        .pk-live-group .stream-game-languge{
+            font-size: 16px;
+            color: #adadb8;
+        }
+
+        .pk-live-group .thumbnail{
+            position: relative;
+            height: 160px;
+            background-image: url(./img/dota2_social.jpg);
+            background-size:cover;
+            background-position: center;
+        }
+
+        .pk-live-group .live{
+            position: absolute;
+            top: 10px;
+            left: 10px
+        }
+
+        .pk-live-group .audience{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 14px;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+
+        .pk-live-info{
+            padding: 0 0 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href=""><img src="./img/twitch.jpg" alt="twitch-logo"width="30px"></a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li class="menu-btn">
+                    <a href="">
+                        瀏覽
+                    </a>
+                </li>
+                <li class="menu-btn">
+                    <a href="">
+                        電競
+                    </a>
+                </li>
+                <li class="menu-btn">
+                    <a href="">
+                        音樂
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="search-bar">
+            <input placeholder="搜尋"class="search-input">
+            <div class="search-btn">
+                <a href=""><img src="./img/magnifying-glass.png" alt="search-btn"width="20px"height="20px"></a>
+            </div>
+        </div>
+
+        <div class="member">
+            <div class="prime-btn">
+                <a href=""><img src="./img/皇冠.jpg" alt="prime-btn"width="20px"></a>
+            </div>
+            <ul class="sign-in-sign-up">
+                <li class="sign-in">
+                    <a href="">
+                        登入
+                    </a>
+                </li>
+                <li class="sign-up">
+                    <a href="">
+                        註冊
+                    </a>
+                </li>
+            </ul>
+            <div class="core-btn">
+                <a href=""><img src="./img/個人.jpg" alt="core-btn"width=20px></a>
+            </div>
+        </div>
+    </header>
+
+    <aside>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+        <div class="channel"></div>
+    </aside>
+
+    <main>
+        <div class="container">
+            <div class="e-sport">
+                <h1>電競</h1>
+                <p class="e-sport-description">
+                    即時賽況、賽事精華和您最愛的職業玩家都在這裡
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="game-card">
+                            <div class="game-img"></div>
+                            <div class="game-info">
+                                <p class="game-name">
+                                    League of Legends
+                                </p>
+                                <p class="sub-info">
+                                    觀眾人數:1,880
+                                </p>
+                            </div>
+                            <div class="live-block">
+                                <div class="live">LIVE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+            </div>
+
+            <div class="pk-live">
+                <h2>實況中的對戰</h2>
+                <p class="pk-live-description">
+                    我們認為您會喜歡的最精彩 Live 比賽和對戰
+                </p>
+                <div class="pk-live-block">
+                    <div class="pk-live-highlight">
+                        <div class="pk-live-card">
+                            <div class="thumbnail">
+                                <div class="live">LIVE</div>
+                                <div class="audience">觀眾人數:8,888</div>
+                            </div>
+                            <div class="pk-live-info">
+                                <div class="streamer">
+                                    <div class="pic"></div>
+                                    <div class="name">VALORANT</div>
+                                </div>
+                                <div class="stream-title">
+                                    (Rebroadcast) Vivo Keyd vs KRU Esports - VALORANT Masters: Berlin - Group Stage
+                                </div>
+                                <div class="stream-game-languge">
+                                    VALORANT•英文
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pk-live-group">
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="pk-live-card">
+                                <div class="thumbnail">
+                                    <div class="live">LIVE</div>
+                                    <div class="audience">觀眾人數:8,888</div>
+                                </div>
+                                <div class="pk-live-info">
+                                    <div class="streamer">
+                                        <div class="pic"></div>
+                                        <div class="name">
+                                            BeyondTheSummit
+                                        </div>
+                                    </div>
+                                    <div class="stream-title">
+                                        UP NEXT LIVE: Galaxy Racer vs OB.Neon (Bo2) - BTS Pro Series 8: SEA Groups w/ Ares & Danog
+                                    </div>
+                                    <div class="stream-game-languge">
+                                        Dota 2•英文
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
